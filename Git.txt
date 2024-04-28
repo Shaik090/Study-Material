@@ -1,0 +1,177 @@
+What is Git?
+
+Git is a Distributed Version control system
+
+Version control, also known as source control, is the practice of tracking and managing changes to software code.
+
+Change Tracking: Git records changes to a file or set of files over time so you can recall specific versions later.
+
+Collaboration: Multiple developers can work on different features or fixes and merge their changes without conflict.
+
+Branching and Merging: Git allows the creation of branches for isolated development and easy merging of these branches.
+
+Rollback: If a mistake is made, developers can revert to earlier versions of the code to fix the mistake.
+
+Accountability: Git keeps track of who made which changes and when, adding accountability and traceability to the development process.
+
+Version Control Categorize into 
+
+1. Local Version Control : Local storage
+
+2. Centralized version control system (CVCS)
+   
+    Works as central server (Repository)
+
+3. Distributed Version Control System (DVCS)
+    Which has a copy of Central server
+
+Commands to install git
+========================
+> git --version
+
+commands in VS code terminal
+=============================
+
+* if we want to commit or track progress or create different versions and to tell that to git. Apart from working directory we also have staging area.
+Staging area is a place where git knows which files to be tracked and ignores remaining files by taking the instructions from the user for what to track.
+In git there is a commit history where we can find the old versions a project.
+
+>git init
+ # initialize the git repository in local storage
+ # The above cmd by default creates git as "master'
+
+> git init -b main 
+
+# this cmd is to create git as "main" 
+
+
+> git status
+
+Config Git
+==========
+
+> git config --global user.name "My Name"
+  
+ # set name in terminal
+
+> git config --global user.email "mailid"
+
+# mail id should be github login
+
+> git config --list 
+
+ Clone - Cloning a repo on our local machine
+
+> git clone <-Link of github->
+
+>git status
+
+Status - displays the state of the code
+
+
+
+Untracked --> New files that git doesn't yet track
+
+Modified --> changed
+
+Staged --> file is ready to be committed
+
+Unmodified --> unchanged
+
+Add--> adds new or changed files in your working directory to the Git Staging area.
+ 
+	> git add <-file name->
+	
+	> git add .   # it will add all the files in the repo and ready  to commit
+ 
+Commit -->  It is the record of change
+
+	> git commit -m "some message"
+
+Push command --> Upload local repo content to remote repo
+
+	> git push origin main
+
+init Command
+=============
+
+init --> used to create a new git repo
+
+ 	> git init
+	
+	> git remote add origin <-link->
+
+	> git remote -v # (To verify remote)
+	
+	> git branch  # (To check branch)
+
+	> git branch -M main  # (to rename branch)
+
+	> git push origin main  # ( Origin is name not any default)
+
+Branch Commands
+================
+
+	> git branch     # (To check branch)
+
+	> git branch -M main 	# (to rename branch)
+
+ 	> git checkout <- branch name -> 	# (To navigate)
+
+	> git checkout -b <- new branch name ->  # (to create new branch)
+
+	> git branch -d <- branch name -> 	# (to delete branch)
+
+Merge Code 
+===========
+
+Way 1
+------
+
+	> git diff <-branch name ->   # ( To compare commits, branches, files & more)
+	> git merge <-branch name->   # (To merge 2 branches)
+
+Way 2
+-----
+
+Create a PR  # (Pull request)
+
+Pull request --> It tells you tell others about changes you've pushed to a branch in a repository on GitHub
+
+Pull Command 
+============
+
+	> Git pull origin main
+
+used to fetch and download content from a remote repo and immediately update the local repo to match that content
+
+
+Resolving Merge Conflicts
+=========================
+
+An event that takes place when Git is unable to automatically resolve differences in code  between two commits.
+
+
+Undoing Changes
+================
+
+Case 1 : Staged changes 
+
+	> git reset <- file name ->
+	> git reset
+
+Case 2 : committed changes (for one commit)
+
+	> git reset HEAD~1
+
+Case 3 :Commited changes (for many commits)
+
+	> git reset <- commit hash ->
+	> git reset --hard <-commit hash ->
+
+Fork 
+=====
+
+A fork is a new repository that shares code and visibility setttings with the original "upstream" repository
+
+Fork is a rough copy.
